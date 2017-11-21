@@ -11,3 +11,21 @@ the challenge focuses on building a model that automatically classifies the prod
 ## Data Description
 Data is provided in bson file structure in both train and test set in the format of dictonary i.e. Each dictionary contains a product id (key: _id), the category id of the product (key: category_id), and between 1-4 images, stored in a list (key: imgs).
 This compettion has really big data (for one machine) that contains 58GB of Train data and 14GB of Test data with 7,069,896 rows in train data and  1,768,182 in test data.
+
+## Workflow:
+
+Although the training results can't be acheived as high, due to limitation of computation power, but following are the steps/achievement that are done for managing such a big data.
+
+1. Data Management
+  - mongodb
+  -  batch processing
+  - class encoding (5200)
+2. Model Training
+  - simple model
+  - complex model
+  - transfer learning
+  - Overfiting and underfiting
+3. Results/Discussion
+  - Overall experience
+  - test result
+  
