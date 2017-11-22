@@ -23,13 +23,15 @@ Although the training results can't be acheived as high, due to limitation of co
     The number of class for the problem were *5200* that is really high multi-class classification problem, and single row might have (1,5200) values at output layer for encoding purpose. So, we first converted all labels values to respective encoding values ie. each row and (1,5200) shape, and instead of reading for disk each time, we have saved whole processed label data to mongodb with row_id and encode values, and during read time instead of reading and converting to encode whole class labels, we just read it from mongodb by comparing product_id in train dataset and encode dataset. [Encode class ipython notebook](https://github.com/hamzafar/cdiscount-image-classification-challenge/blob/master/Encode%20Class%20Labels.ipynb) contains all procedure.
   
 2. Model Training
-  - simple model
-  - complex model
+  - **Simple Model & Complex model:**
+    We just tried two type of custom deep learning architecture. In first approach we made a [simple strucutre](https://github.com/hamzafar/cdiscount-image-classification-challenge/blob/master/Train%20Simple%20Model%20on%20all%20data.ipynb) of CNN with only convolutional layer with 40 filters and this training is done only for two epochs. Then more and more layers are included to reduce training error on sample data to ~0. The [bigger network](https://github.com/hamzafar/cdiscount-image-classification-challenge/blob/master/Train%20Simple%20Model%20on%20all%20data.ipynb) contains ~3 million parameters. We have focused on bais-variance trade of by simple trick i.e. reduce error near to zero on sample data and include more and more data to reduce high variance. Since we have penalty of data so we need to worry much about this.
+  
   - **Transfer Learning:**
     In this processing, InceptionV3 model weights are used for Transfer Learning. The typical architeciture works on freezing  FC7 (Last layer of model) layer and learn new classes of data. Since InceptionV3 was trained on 150X150 image size; the images are resized to 150X150. One can see [code.](https://github.com/hamzafar/cdiscount-image-classification-challenge/blob/master/Transfer%20Learning%20with%20InceptionV3.ipynb)
   
   - Overfiting and underfiting
 3. Results/Discussion
+Training on such big data is really a big challenging when you don't have enough resuorces. 
   - Overall experience
   - test result
   
