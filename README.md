@@ -18,8 +18,10 @@ Although the training results can't be acheived as high, due to limitation of co
 
 1. Data Management
   - **MongoDB & Batch Processing:**
-    Since data is really big for playing with only one machine with considerably low computational power, there must be efficient way to read data in python, and then build Deep learning model on the data. MongoDB is excellent for this purpose; where whole training data is loaded to mongoDB and then data in form of batches was read. We can also change the datasize by specifying the batch size by defining number of row in *batch* variable in the [code](https://github.com/hamzafar/cdiscount-image-classification-challenge/blob/master/Train%20Simple%20Model%20on%20all%20data.ipynb)
-  - class encoding (5200)
+    Since data is really big for playing with only one machine with considerably low computational power, there must be efficient way to read data in python, and then build Deep learning model on the data. MongoDB is excellent for this purpose; where whole training data is loaded to mongoDB and then data in form of batches was read. We can also change the datasize by specifying the batch size by defining number of row in *batch* variable in the [code.](https://github.com/hamzafar/cdiscount-image-classification-challenge/blob/master/Train%20Simple%20Model%20on%20all%20data.ipynb)
+  - **Class Encoding:**
+    The number of class for the problem were *5200* that is really high multi-class classification problem, and single row might have (1,5200) values at output layer for encoding purpose. So, we first converted all labels values to respective encoding values ie. each row and (1,5200) shape, and instead of reading for disk each time, we have saved whole processed label data to mongodb with row_id and encode values, and during read time instead of reading and converting to encode whole class labels, we just read it from mongodb by comparing product_id in train dataset and encode dataset. [Encode class ipython notebook](https://github.com/hamzafar/cdiscount-image-classification-challenge/blob/master/Encode%20Class%20Labels.ipynb) contains all procedure.
+  
 2. Model Training
   - simple model
   - complex model
