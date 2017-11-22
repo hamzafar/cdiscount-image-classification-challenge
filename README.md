@@ -29,9 +29,11 @@ Although the training results can't be acheived as high, due to limitation of co
   - **Transfer Learning:**
     In this processing, InceptionV3 model weights are used for Transfer Learning. The typical architeciture works on freezing  FC7 (Last layer of model) layer and learn new classes of data. Since InceptionV3 was trained on 150X150 image size; the images are resized to 150X150. One can see [code.](https://github.com/hamzafar/cdiscount-image-classification-challenge/blob/master/Transfer%20Learning%20with%20InceptionV3.ipynb)
   
-  - Overfiting and underfiting
 3. Results/Discussion
-Training on such big data is really a big challenging when you don't have enough resuorces. 
-  - Overall experience
-  - test result
-  
+
+Training on such big data is really a big challenging when you don't have enough resuorces. Although we only can train on 2 million rows and had to stop it because of memory crash but this is the awesome competition that make muscle strong with playing with complex problems like Cdiscount.
+
+To see how we are obtaining results, we just simply worked on 200,000 dataset and get predictions to see how accurately our [model](https://github.com/hamzafar/cdiscount-image-classification-challenge/blob/master/Train%20on%20Sample%20data%20and%20get%20prediction%20on%20same%20data.ipynb) is acheiving. 
+
+Further, The model that was trained on 2 million rows; the weight of this model were saved and we get predictions on the [test-set](https://github.com/hamzafar/cdiscount-image-classification-challenge/blob/master/predict.ipynb) for kaggle submission
+
