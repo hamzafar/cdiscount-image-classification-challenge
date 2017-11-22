@@ -23,7 +23,7 @@ Although the training results can't be acheived as high, due to limitation of co
 2. Model Training
   - simple model
   - complex model
-  - **Transfer Learning: **
+  - **Transfer Learning:**
     In this processing, InceptionV3 model weights are used for Transfer Learning. The typical architeciture works on freezing  FC7 (Last layer of model) layer and learn new classes of data. Since InceptionV3 was trained on 150X150 image size; the images are resized to 150X150. One can see [code.](https://github.com/hamzafar/cdiscount-image-classification-challenge/blob/master/Transfer%20Learning%20with%20InceptionV3.ipynb)
   
   - Overfiting and underfiting
