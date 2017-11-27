@@ -16,7 +16,7 @@ This compettion has really big data (for one machine) that contains 58GB of Trai
 
 Although the training results can't be acheived as high, due to limitation of computation power, but following are the steps/achievement that are done for managing such a big data.
 
-### 1. Data Management###
+### 1. Data Management ###
   - **MongoDB & Batch Processing:**
     Since data is really big for playing with only one machine with considerably low computational power, there must be efficient way to read data in python, and then build Deep learning model on the data. MongoDB is excellent for this purpose; where whole training data is loaded to mongoDB and then data in form of batches was read. We can also change the datasize by specifying the batch size by defining number of row in *batch* variable in the [code.](https://github.com/hamzafar/cdiscount-image-classification-challenge/blob/master/Train%20Simple%20Model%20on%20all%20data.ipynb)
   - **Class Encoding:**
